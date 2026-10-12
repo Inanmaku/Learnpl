@@ -1,0 +1,404 @@
+html,
+body {
+  font-family: "Fredoka", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  height: 100%;
+  overflow-x: hidden;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+  background: linear-gradient(to bottom, #fffdf7 50%, #e15446 50%);
+  transform-origin: top center;
+}
+
+.back-btn-wrapper,
+.shuffle-btn-wrapper {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 5px;
+}
+
+.back-btn-wrapper {
+  left: 15px;
+}
+.back-btn,
+.back-shadow {
+  position: absolute;
+  width: 100%;
+}
+
+.back-shadow {
+  top: 5px;
+  z-index: 0;
+}
+
+.back-btn {
+  z-index: 1;
+  transition: transform 0.1s ease;
+}
+.shuffle-btn-wrapper {
+  right: 15px;
+}
+.shuffle-btn-wrapper {
+  position: absolute;
+  top: 5px;
+
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.shuffle-btn,
+.shuffle-shadow {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.shuffle-shadow {
+  top: 5px;
+  z-index: 0;
+}
+
+.shuffle-btn {
+  top: 0;
+  z-index: 1;
+  transition: transform 0.1s ease;
+}
+
+.shuffle-btn-wrapper:active .shuffle-btn {
+  transform: translateY(5px);
+}
+
+.shuffle-btn-wrapper:hover .shuffle-btn {
+  transform: translateY(-2px);
+}
+.back-btn-wrapper:active .back-btn {
+  transform: translateY(5px);
+}
+.back-btn-wrapper:hover .back-btn {
+  transform: translateY(-2px);
+}
+.back-btn-wrapper,
+.shuffle-btn-wrapper {
+  width: clamp(40px, 6vw, 60px);
+  height: clamp(40px, 6vw, 60px);
+}
+.back-btn-wrapper:active .back-btn,
+.shuffle-btn-wrapper:active .shuffle-btn {
+  transform: translateY(5px);
+}
+
+.title-img {
+  transform: translateY(-60px);
+  width: 330px;
+  margin-bottom: -5px;
+}
+
+.screen {
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  padding-top: 110px;
+  box-sizing: border-box;
+}
+#quiz {
+  position: relative;
+}
+.btn {
+  width: 160px;
+  padding: 11px;
+  font-size: 26px;
+  color: white;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 13px;
+  background: #e55c4e;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.12s ease;
+}
+
+#progressBar {
+  top: calc(48% + 170px);
+  width: 80%;
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 15px;
+  background: #e76052;
+  border-radius: 15px;
+}
+#progress {
+  height: 100%;
+  width: 0%;
+  background: #cec29a;
+  border-radius: 15px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+#menu {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-25px);
+}
+.people .btn {
+  background: #f3edd9;
+}
+.people .shadow {
+  background: #cec29a;
+}
+.actions .shadow {
+  background: #cec29a;
+}
+.actions .btn {
+  background: #f3edd9;
+}
+.shadow {
+  width: 160px;
+  height: 52px;
+  border-radius: 13px;
+  background: #d32424;
+  margin-top: -46px;
+}
+
+.btn-wrapper {
+  flex-direction: column;
+  margin: 6px 0;
+  transition: transform 0.12s ease;
+  transform: translateY(-45px);
+}
+.btn-wrapper:hover .btn {
+  transform: translateY(-4px);
+}
+
+.btn-wrapper:active .btn {
+  transform: translateY(6px);
+}
+.box-container {
+  width: 350px;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 450 / 290;
+}
+
+.question-text {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+.answer-input {
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 77%;
+  padding: 3px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #beb38b;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.result-text {
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  font-size: 26px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+.flower-tap {
+  transform: scale(1.5) rotate(10deg);
+}
+
+.flower {
+  position: absolute;
+  z-index: 2;
+  pointer-events: auto;
+  transition: transform 0.25s ease;
+}
+
+.tl1 {
+  top: 30px;
+  left: 25px;
+}
+.tl2 {
+  top: 30px;
+  left: 80px;
+}
+.tl3 {
+  top: 87px;
+  left: 16px;
+}
+
+.tr2 {
+  top: 80px;
+  right: 19px;
+}
+.tr3 {
+  top: 30px;
+  right: 50px;
+}
+.tr4 {
+  top: 35px;
+  right: 100px;
+}
+
+.bl1 {
+  bottom: 37px;
+  left: 20px;
+}
+.bl2 {
+  bottom: 90px;
+  left: 13px;
+}
+.bl3 {
+  bottom: 40px;
+  left: 100px;
+}
+
+.br1 {
+  bottom: 40px;
+  right: 15px;
+}
+.br2 {
+  bottom: 40px;
+  right: 90px;
+}
+.br3 {
+  bottom: 85px;
+  right: 25px;
+}
+
+.f1 {
+  width: 30px;
+  transform: rotate(-10deg);
+}
+.f2 {
+  width: 19px;
+  transform: rotate(20deg);
+}
+.f3 {
+  width: 23px;
+  transform: rotate(-25deg);
+}
+.f4 {
+  width: 20px;
+  transform: rotate(10deg);
+}
+
+#bison {
+  position: absolute;
+  top: -17px;
+  left: 0%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: auto;
+  z-index: 5;
+}
+
+.top-bar {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.quiz-title {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: clamp(40px, 6vw, 60px);
+  width: auto;
+}
+.box-correct-soft {
+  animation: correctBounce 0.2s ease;
+}
+
+.box-wrong {
+  animation: wrongBounce 0.35s ease;
+}
+
+.box-correct {
+  animation: correctPop 0.25s ease;
+}
+.box-correct-final {
+  animation: popBig 0.25s ease;
+}
+
+@keyframes wrongBounce {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  30% {
+    transform: translate(-50%, -50%) translateY(12px);
+  }
+  60% {
+    transform: translate(-50%, -50%) translateY(-6px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+@keyframes correctPop {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes correctBounce {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  40% {
+    transform: translate(-50%, -50%) translateY(-12px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+@keyframes popBig {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

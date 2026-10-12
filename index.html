@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Language Trainer</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="app">
+      <div id="menu" class="screen">
+        <img src="assets/POLISH.png" alt="Polish" class="title-img" />
+
+        <div class="btn-wrapper people">
+          <button class="btn" onclick="startSingle('people')">People</button>
+          <div class="shadow"></div>
+        </div>
+
+        <div class="btn-wrapper actions">
+          <button class="btn" onclick="startSingle('actions')">Actions</button>
+          <div class="shadow"></div>
+        </div>
+
+        <div class="btn-wrapper">
+          <button class="btn" onclick="startSingle('things')">Things</button>
+          <div class="shadow"></div>
+        </div>
+
+        <div class="btn-wrapper">
+          <button class="btn" onclick="startSingle('qualities')">
+            Qualities
+          </button>
+          <div class="shadow"></div>
+        </div>
+
+        <div class="btn-wrapper">
+          <button class="btn" onclick="startSingle('links')">Links</button>
+          <div class="shadow"></div>
+        </div>
+      </div>
+
+      <div id="quiz" class="screen" style="display: none">
+        <div class="top-bar">
+          <div class="left-controls">
+            <div class="back-btn-wrapper" onclick="goMenu()">
+              <img src="assets/back.png" class="back-btn" />
+              <img src="assets/buttomback.png" class="back-shadow" />
+            </div>
+          </div>
+
+          <img id="quizTitle" class="quiz-title" src="" />
+
+          <div class="right-controls">
+            <div class="shuffle-btn-wrapper" onclick="swapQA()">
+              <img src="assets/re.png" class="shuffle-btn" />
+              <img src="assets/buttomre.png" class="shuffle-shadow" />
+            </div>
+          </div>
+        </div>
+
+        <div id="box" class="box-container">
+          <img src="assets/boxboxbox.png" class="box-container" />
+
+          <img src="assets/darkredflower.png" class="flower tl1 f1" />
+          <img src="assets/redflower.png" class="flower tl2 f2" />
+          <img src="assets/greyflower.png" class="flower tl3 f3" />
+
+          <img src="assets/redflower.png" class="flower tr2 f2" />
+          <img src="assets/darkredflower.png" class="flower tr3 f3" />
+          <img src="assets/greyflower.png" class="flower tr4 f4" />
+
+          <img src="assets/redflower.png" class="flower bl1 f1" />
+          <img src="assets/darkredflower.png" class="flower bl2 f2" />
+          <img src="assets/greyflower.png" class="flower bl3 f3" />
+
+          <img src="assets/greyflower.png" class="flower br1 f1" />
+          <img src="assets/redflower.png" class="flower br2 f2" />
+          <img src="assets/darkredflower.png" class="flower br3 f3" />
+
+          <h2 id="question" class="question-text"></h2>
+          <input id="answer" class="answer-input" autofocus />
+          <p id="result" class="result-text"></p>
+
+          <div id="progressBar">
+            <div id="progress"></div>
+            <img src="assets/bison.png" id="bison" alt="Bison" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
